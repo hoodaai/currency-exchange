@@ -36,7 +36,9 @@ dependencies {
             /* if using mysql database*/
             //'mysql:mysql-connector-java:5.1.36',
             /* if using H2 database*/
-            'com.h2database:h2:1.4.190'
+            'com.h2database:h2:1.4.190',
+            'org.apache.httpcomponents:httpclient:4.5.1',
+            'com.google.code.gson:gson:2.5'
 
     //spring security
     compile 'org.springframework.security:spring-security-web:4.0.2.RELEASE',

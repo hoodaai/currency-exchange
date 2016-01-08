@@ -10,13 +10,12 @@
         http://www.springframework.org/schema/tx      http://www.springframework.org/schema/tx/spring-tx.xsd">
 
     <tx:annotation-driven/>
-    <!--<context:component-scan base-package="com" />-->
 
     <beans profile="dev">
         <!--mysql database-->
         <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
             <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-            <property name="url" value="jdbc:mysql://192.168.33.60:3306/testdb"/>
+            <property name="url" value="jdbc:mysql://localhost:3306/virtualExchange"/>
             <property name="username" value="admin"/>
             <property name="password" value="root"/>
         </bean>
@@ -28,8 +27,8 @@
         <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
             <property name="driverClassName" value="org.h2.Driver"/>
             <!-- enable if you want file based h2 database instead of in memory-->
-            <!--<property name="url" value="jdbc:h2:file:~/socialmedia"/>-->
-            <property name="url" value="jdbc:h2:mem:socialmedia"/>
+            <!--<property name="url" value="jdbc:h2:file:~/virtualExchange"/>-->
+            <property name="url" value="jdbc:h2:mem:virtualExchange"/>
             <property name="username" value="sa"/>
             <property name="password" value=""/>
         </bean>
@@ -58,22 +57,26 @@
 
             <property name="annotatedClasses">
                 <list>
-                    <value>com.model.FaceBookPage</value>
+                    <value>com.dataaccess.model.CurrencyExchangeRate</value>
                 </list>
             </property>
 
         </bean>
 
 
-        <bean id="pagesDao" class="com.dao.PagesDao">
+        <bean id="currencyExchangeDao" class="com.dataaccess.dao.CurrencyExchangeDao">
             <property name="sessionFactory" ref="sessionFactory"></property>
+        </bean>
+
+        <bean id="currencyService" class="com.currencyservice.CurrencyExchangeServiceImpl">
+            <property name="currencyExchangeDao" ref="currencyExchangeDao"></property>
         </bean>
     </beans>
 
 
 
-<!-- Flyway bean, which is initialized by spring application context on server startup. This bean scans for sql migration
- scripts on given location and executes them -->
+    <!-- Flyway bean, which is initialized by spring application context on server startup. This bean scans for sql migration
+     scripts on given location and executes them -->
     <beans profile="local,dev">
         <bean id="flyway" class="org.flywaydb.core.Flyway" init-method="migrate">
             <property name="baselineOnMigrate" value="true" />

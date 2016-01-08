@@ -1,0 +1,38 @@
+<div class="">
+  <h1>List Currency</h1>
+  <p class="lead">
+
+      <table class="table table-condensed">
+          <tr>
+              <td>
+                  S.N.
+              </td>
+              <td>
+                  Name
+              </td>
+              <td>
+                  Rate
+              </td>
+              <td>
+                  Base Currency
+              </td>
+          </tr>
+          <tr ng-repeat="currency in currencyList">
+              <td>
+                   [{{$index + 1}}]
+              </td>
+              <td>
+                  {{currency.currencyName}}
+              </td>
+              <td>
+                  {{currency.conversionRate}}
+              </td>
+              <td>
+                   {{currency.baseCurrency}}
+              </td>
+          </tr>
+      </table>
+
+  </p>
+
+</div>

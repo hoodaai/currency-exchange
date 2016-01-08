@@ -26,12 +26,6 @@
 
 
 
-
-    <!--<security:authentication-manager>-->
-        <!--<security:authentication-provider-->
-                <!--user-service-ref="userService" />-->
-    <!--</security:authentication-manager>-->
-
     <bean id="mappings" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="locations">
             <list>
@@ -41,9 +35,23 @@
     </bean>
     <import resource="classpath:/com/persistence/persistence-beans.xml" />
 
-    <bean id="accessDeniedHandler"
-          class="com.model.MyAccessDeniedHandler">
-        <property name="accessDeniedUrl" value="authenticate/login.htm?msg=AccessDenied" />
+    <bean id="syncService" class="com.syncservice.SyncService">
+        <property name="appId" value="${app_id}"></property>
+        <property name="exchangeServerUrl" value="${exchangerate.server.url}"></property>
+        <property name="currencyExchangeDao" ref="currencyExchangeDao"></property>
     </bean>
+
+    <!--<task:scheduled-tasks>-->
+    <!--<task:scheduled ref="syncService" method="syncCurrencyExchangeData" cron="${sync.cron.expression}" />-->
+    <!--</task:scheduled-tasks>-->
+
+    <bean id="cleanUpService" class="com.syncservice.CleanUpService">
+        <property name="currencyExchangeDao" ref="currencyExchangeDao"></property>
+    </bean>
+
+    <!--<task:scheduled-tasks>-->
+    <!--<task:scheduled ref="cleanUpService" method="cleanOldCurrencyDetailRecords" cron="${cleanup.cron.expression}" />-->
+    <!--</task:scheduled-tasks>-->
+
 
 </beans>

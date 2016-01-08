@@ -1,0 +1,43 @@
+<div class="">
+  <h1>Search Currency</h1>
+  <p class="lead">
+
+      <form class="form-horizontal">
+        <div class="form-group">
+          <div class="col-sm-7">
+            <input type="text" class="form-control" id="inputEmail3" placeholder="Amount" ng-model="currencyName">
+          </div>
+          <div class="col-sm-2">
+                <button type="submit" ng-click="search(currencyName)" class="btn btn-default">Search</button>
+          </div>
+        </div>
+      </form>
+
+      <table ng-show="searchResult.status == 'OK'" class="table table-striped">
+        <tr class="success">
+            <td>
+                {{searchResult.result.currencyName}}
+            </td>
+            <td>
+                {{searchResult.result.conversionRate}}
+            </td>
+            <td>
+                {{searchResult.result.baseCurrency}}
+            </td>
+        </tr>
+      </table>
+      <table ng-show="searchResult.status == 'NOT_FOUND'" class="table table-striped">
+        <tr class="danger">
+            <td>
+                Result not found.
+            </td>
+
+        </tr>
+      </table>
+  </p>
+
+</div>
+
+<div class="row marketing">
+
+</div>

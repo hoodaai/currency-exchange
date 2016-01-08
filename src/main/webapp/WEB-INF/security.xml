@@ -24,7 +24,6 @@
         <form-login />
         <csrf disabled="true"/>
         <logout invalidate-session="true" logout-url="/j_spring_security_logout" logout-success-url="/status" />
-        <access-denied-handler ref="accessDeniedHandler"/>
     </http>
 
 

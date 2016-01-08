@@ -49,6 +49,8 @@ Instructions to install and configure any prerequisites for the development envi
  - set JAVA_HOME in /etc/profile (if not set automatically by above commands)
  
  - Open /etc/profile and edit with following content
+ 
+  ```
   
     JAVA_HOME=/usr/lib/jvm/java-8-oracle 
     PATH=$PATH:$HOME/bin:$JAVA_HOME/bin
@@ -57,7 +59,7 @@ Instructions to install and configure any prerequisites for the development envi
     export JAVA_HOME
     export JRE_HOME
     export PATH
-
+```
 ## Installing Gradle
 
  - download gradle binary distribution from http://gradle.org/gradle-download/
