@@ -1,4 +1,4 @@
-package com.restservice;
+package com.rest.spring;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;

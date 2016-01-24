@@ -21,6 +21,12 @@ angular.module('webappApp')
 	        $log.debug("convert");
 	        var request = $http.get('http://localhost:8080/exchange/api/currency/convert?source='+source+'&target='+target+'&amount='+amount);
 	        return request;
+		},
+
+	    syncWithCurrencyServer: function() {
+		   $log.debug("convert");
+		   var request = $http.get('http://localhost:8080/exchange/api/sync');
+		   return request;
 	    }
 
    };

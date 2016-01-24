@@ -1,6 +1,5 @@
-package com.restservice;
+package com.rest.spring;
 
-import com.dataaccess.model.CurrencyExchangeRate;
 import com.syncservice.CleanUpService;
 import com.syncservice.SyncService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,9 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.servlet.http.HttpServletResponse;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**

@@ -22,7 +22,7 @@ angular.module('webappApp')
     		  	$scope.currencyList = data.result;
     		}).error(function(data) {
     		  	console.log("error");
-    		  });
+            });
 
               $scope.search = function(currencyName) {
                   currencyservice.search(currencyName).success(function(data) {
@@ -42,5 +42,18 @@ angular.module('webappApp')
                 });
             };
 
+            $scope.syncWithCurrencyServer = function(source, target, amount) {
+                currencyservice.syncWithCurrencyServer().success(function(data) {
+                    console.log("Sync Success");
+                    currencyservice.getList().success(function(data) {
+                        console.log("getList Success");
+                        $scope.currencyList = data.result;
+                    }).error(function(data) {
+                        console.log("error");
+                    });
+                }).error(function(data) {
+                    console.log("error");
+                });
+            };
 
   });

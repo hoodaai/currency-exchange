@@ -1,4 +1,4 @@
-package com.restservice;
+package com.rest.spring;
 
 import com.currencyservice.CurrencyExchangeService;
 import com.dataaccess.model.CurrencyExchangeRate;
@@ -7,7 +7,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
-import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;

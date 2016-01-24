@@ -1,38 +1,49 @@
 <div class="">
-  <h1>List Currency</h1>
-  <p class="lead">
+    <h1>List Currency</h1>
+    <p class="lead">
 
-      <table class="table table-condensed">
-          <tr>
-              <td>
-                  S.N.
-              </td>
-              <td>
-                  Name
-              </td>
-              <td>
-                  Rate
-              </td>
-              <td>
-                  Base Currency
-              </td>
-          </tr>
-          <tr ng-repeat="currency in currencyList">
-              <td>
-                   [{{$index + 1}}]
-              </td>
-              <td>
-                  {{currency.currencyName}}
-              </td>
-              <td>
-                  {{currency.conversionRate}}
-              </td>
-              <td>
-                   {{currency.baseCurrency}}
-              </td>
-          </tr>
-      </table>
 
-  </p>
+    <div ng-show="currencyList.length<=0" >
+        <p>Server is not synced with Currency Exchange. In order to get latest currency list you need to
+            Sync server with Currency Exchange.</p>
+
+        <div class="col-md-12 center-block">
+            <button id="syncbutton" name="syncbutton" ng-click="syncWithCurrencyServer()" class="btn btn-primary center-block">
+                Sync it now
+            </button>
+        </div>
+    </div>
+    <table ng-show="currencyList.length>0" class="table table-condensed">
+        <tr>
+            <td>
+                S.N.
+            </td>
+            <td>
+                Name
+            </td>
+            <td>
+                Rate
+            </td>
+            <td>
+                Base Currency
+            </td>
+        </tr>
+        <tr ng-repeat="currency in currencyList">
+            <td>
+                [{{$index + 1}}]
+            </td>
+            <td>
+                {{currency.currencyName}}
+            </td>
+            <td>
+                {{currency.conversionRate}}
+            </td>
+            <td>
+                {{currency.baseCurrency}}
+            </td>
+        </tr>
+    </table>
+
+    </p>
 
 </div>
