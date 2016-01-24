@@ -1,3 +1,5 @@
+![screenshot](https://cloud.githubusercontent.com/assets/1543471/12535017/dbc840be-c299-11e5-98ed-3dd573feb62e.png)
+
 ## Virtual Currency Exchange Rate Publishing System
 
 # Overview
