@@ -126,7 +126,7 @@ Note: If you are using MySQL, then you need to change MySQL username and passwor
  - After startup, your instance will be available on localhost, port 8080.
 
 ```
-http://localhost:8080/
+http://localhost:8080/exchange
 ```
 
  - You can also run it as a webapp in Tomcat, by deploying the war file generated in the build directory.
