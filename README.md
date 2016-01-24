@@ -1,6 +1,14 @@
+## Virtual Currency Exchange Rate Publishing System
+
+### Home Page
 ![screenshot](https://cloud.githubusercontent.com/assets/1543471/12535017/dbc840be-c299-11e5-98ed-3dd573feb62e.png)
 
-## Virtual Currency Exchange Rate Publishing System
+### List Currency
+![screenshot](https://cloud.githubusercontent.com/assets/1543471/12535016/dbc7c4ea-c299-11e5-9eeb-9466bdfb3d7e.png)
+
+### Convert Currency
+![screenshot](https://cloud.githubusercontent.com/assets/1543471/12535015/dbc6e62e-c299-11e5-914f-7b3900f277e0.png)
+
 
 # Overview
 Virtual Currency Exchange Rate Publishing System consist of a modern web client and a server. 
